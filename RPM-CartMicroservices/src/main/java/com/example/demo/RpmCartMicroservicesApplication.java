@@ -8,6 +8,7 @@ public class RpmCartMicroservicesApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RpmCartMicroservicesApplication.class, args);
+		private String name;
 	}
 
 }
