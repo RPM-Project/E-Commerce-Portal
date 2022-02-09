@@ -11,10 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cognizant.microservice.exception.ProductNotFoundException;
-import com.cognizant.microservice.exception.RatingGreaterThan5Exception;
-import com.cognizant.microservice.model.Product;
-import com.cognizant.microservice.service.ProductServiceImpl;
 
 @RestController
 @RequestMapping("/product")
