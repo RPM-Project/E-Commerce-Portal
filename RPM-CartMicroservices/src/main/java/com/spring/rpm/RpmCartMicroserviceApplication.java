@@ -1,14 +1,14 @@
-package com.example.demo;
+package com.spring.rpm;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RpmCartMicroservicesApplication {
+public class RpmCartMicroserviceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RpmCartMicroservicesApplication.class, args);
-		private String name;
+		SpringApplication.run(RpmCartMicroserviceApplication.class, args);
+		
 	}
 
 }
