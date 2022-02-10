@@ -7,8 +7,6 @@ import lombok.NoArgsConstructor;
 
 
 @Data
-
-
 public class CartRequestDto {
 		public CartRequestDto(long productId, long customerId, String zipcode, long quantity) {
 		super();
