@@ -7,14 +7,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Cart {
-	private long cartId;
-	private long productId;
-	private String zipcode;
-	private LocalDate deliveryDate;
-	private long vendoreId;
+@NoArgsConstructor
+public class VendorWishListDTO {
+
 	private long customerId;
-	private long quantity;
+	private long productId;
+	private int quantity;
+	private long vendorId;
+	private LocalDate addedToWishlistDate;
+
 }

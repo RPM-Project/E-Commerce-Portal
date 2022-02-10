@@ -1,20 +1,23 @@
 package com.cts.ecommerce.model;
 
 import java.time.LocalDate;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Cart {
-	private long cartId;
+@NoArgsConstructor
+public class VendorStock 
+{
+	private long id;
+	
 	private long productId;
-	private String zipcode;
-	private LocalDate deliveryDate;
-	private long vendoreId;
-	private long customerId;
-	private long quantity;
+	
+	//@ManyToOne
+	private long vendorId;
+
+	private int stockInHand;
+	private LocalDate expectedStockReplinshmentDate;
+	
 }
