@@ -24,6 +24,8 @@ public class CartRequestDto {
 		private long customerId;
 		private String zipcode;
 		private long quantity;
+		
+		
 		public long getCustomerId() {
 			return customerId;
 		}
