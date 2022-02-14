@@ -25,7 +25,10 @@ public class CartServiceImpl implements CartService {
 
 	@Autowired
 	private CartRepo cartRepo;
-
+	@Autowired
+	private VendorService vendorService;
+	@Autowired
+	private ProductService productService;
 
 	@Autowired
 	private RestTemplate rt;
@@ -60,6 +63,23 @@ public class CartServiceImpl implements CartService {
 		return "Successfully added to Cart";
 	}
 
+	@Override
+	@Transactional
+	public List<CartResponseDto> getCartList(long customerId) {
+		log.info("getCartList method started execution");
+		log.debug("getCartList() called");
+		List<CartResponseDto> cartDtoList = new ArrayList<>();
+		List<Cart> cartList = cartRepo.getCartListbyCustomerId(customerId);
+		for (Cart cart : cartList) {
+			Product product = productService.getProductbyId(cart.getProductId());
+			Vendor vendor = vendorService.getVendoreById(cart.getVendoreId());
+			cartDtoList.add(new CartResponseDto(cart.getCartId(), cart.getZipcode(), cart.getDeliveryDate(),
+					cart.getCustomerId(), cart.getQuantity(), product, vendor));
+			log.info(cart.getZipcode());
+		}
+
+		return cartDtoList;
+	}
 
 	public boolean isVendorEmpty(Vendor vendoreDetails) {
 		boolean isEmpty = false;

@@ -40,6 +40,16 @@ public class CartController {
 		return statusDto;
 
 	}
+	
+
+	@GetMapping("/getCart/{customerId}")
+	public List<CartResponseDto> getCartList(@PathVariable long customerId) {
+		log.info("get cart service started");
+		List<CartResponseDto> cartList = cartService.getCartList(customerId);
+		log.info("get cartList by customer id service executed successfuly");
+		return cartList;
+	}
+
 
 	
 }
