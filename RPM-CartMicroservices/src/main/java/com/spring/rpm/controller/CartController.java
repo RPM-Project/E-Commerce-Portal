@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.rpm.dto.CartRequestDto;
 import com.spring.rpm.dto.CartResponseDto;
-
+import com.spring.rpm.dto.CustomerWishListRequestDTO;
 import com.spring.rpm.dto.StatusDTO;
 import com.spring.rpm.service.CartService;
 import com.spring.rpm.service.CustomerWishListService;
@@ -49,7 +49,14 @@ public class CartController {
 		log.info("get cartList by customer id service executed successfuly");
 		return cartList;
 	}
+	
+	@PostMapping("/addToCustomerWishlist")
+	public StatusDTO addToCustomerWishList(@RequestBody CustomerWishListRequestDTO customerWishlist) {
+		log.info("Add customer wishList service started");
+		return customerWishlistService.save(customerWishlist);
+	}
 
+	
 
 	
 }

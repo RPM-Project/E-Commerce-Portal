@@ -45,6 +45,17 @@ public class CustomerWishListService {
 	}
 
 
-	
+	@Transactional
+	public List<CustomerWishListDTO> getCartDetails(long customerId) {
+		log.info("get wishlist service method starts");
+		List<CustomerWishListDTO> list = new ArrayList<>();
+		for (CustomerWishList wish : customerRepo.getCustomerListById(customerId)) {
+			Product product = productService.getProductbyId(wish.getProductId());
+			list.add(new CustomerWishListDTO(wish.getWishListId(), wish.getQuantity(), wish.getAddedToWishlistDate(),
+					wish.getCustomerId(), product));
+			log.info("wishlist are returned of customer id"+customerId);
+		}
+		return list;
+	}
 
 }

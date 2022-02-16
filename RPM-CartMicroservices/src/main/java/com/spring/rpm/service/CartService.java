@@ -9,5 +9,5 @@ public interface CartService {
 	
 	public String addToCart(CartRequestDto cartRequestDto);
 	public List<CartResponseDto> getCartList(long customerId);
-	
+	public boolean isVendorEmpty(Vendor vendor);
 }
