@@ -1,0 +1,27 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      docker: 18
+  pre_build:
+    commands:
+      - echo "Entered the pre-build phase"
+      - $(aws ecr get-login  --no-include-email --region us-east-2)
+  build:
+    commands:
+      - echo "Entered build phase"
+      - cd ProductsModule
+      - mvn compile
+      - mvn package
+      - echo " building docker image"
+      - docker build -t product-ecr .
+      - docker tag product-ecr 876983010549.dkr.ecr.us-east-2.amazonaws.com/product-ecr:latest
+  post_build:
+    commands:
+    - echo "Entered the post-build phase"
+    - docker push 876983010549.dkr.ecr.us-east-2.amazonaws.com/product-ecr:latest
+    - printf '[{"name":"productapp-container","imageUri":"%s"}]' 876983010549.dkr.ecr.us-east-2.amazonaws.com/product-ecr:latest > taskdefinition.json
+    - cat taskdefinition.json
+artifacts:
+  files:
+    - taskdefinition.json
