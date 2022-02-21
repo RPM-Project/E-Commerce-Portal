@@ -9,9 +9,7 @@
 <html lang="en">
 <head>
 <title>Retail Product Management</title>
-<link rel="icon"
-	href="https://cdn.icon-icons.com/icons2/2389/PNG/512/shopify_logo_icon_144894.png"
-	type="image/x-icon">
+
 <style>
 html, body {
 	height: 100%;
@@ -21,7 +19,7 @@ html, body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: #a4508b;
-	background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+	background-image: linear-gradient(326deg, #00ccff 0%, #3295a8 74%);
 }
 
 .form-inline {
@@ -38,6 +36,7 @@ input[type="text"] {
 
 #search-button {
 	border-radius: 25px;
+	margin-right: -35px;
 	border: 0%;
 }
 
@@ -95,11 +94,8 @@ a {
 }
 
 .ft {
-	font-family: "Curlz MT", sans;
+	font-family: "DM Serif Text";
 }
-
-
-
 </style>
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -110,19 +106,20 @@ a {
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
+<link rel="stylesheet"
+	href="https://fontawesome.com/icons/address-card?s=solid">
+<script src="https://kit.fontawesome.com/yourcode.js"
+	crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/rating.css" />
-<script src='https://kit.fontawesome.com/a076d05399.js'
-	crossorigin='anonymous'></script>
-
+<script src="https://kit.fontawesome.com/667eb1d7cd.js"
+	crossorigin="anonymous"></script>
 <body class="mainPageBody">
 
 
 	<!-- navbar for the pages -->
 	<nav class="navbar navbar-expand-md navbar-dark"
 		style="background-color: rgba(53, 57, 66, 255);">
-		<h2 style="color: white;" class="ft">
-			<i class="fab fa-shopify"></i>&nbsp;Shopper.com
-		</h2>
+		<h2 style="color: white;" class="ft">ShopperKing.com</h2>
 
 
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -130,24 +127,32 @@ a {
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
-			
+
 			<form class="form-inline fixed-center my-2 my-lg-0"
 				action="/searchByName" method="get">
-				
+
 				<input class="form-control mr-sm-2" type="text"
-					placeholder="Search..." name="search" id="search" />&nbsp;
-				<span><button class="btn btn-primary my-20 my-sm-0" type="submit" id="search-button">
-					<i class="fa fa-search" style="color: white;"></i>
-				</button></span>
+					placeholder="Search..." name="search" id="search" />&nbsp; <span><button
+						class="btn btn-primary my-20 my-sm-0" type="submit"
+						id="search-button">
+						<i class="fa fa-search" style="color: white;"></i>
+					</button></span>
 			</form>
-			
+
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item"><a href="/getWishlist" class="nav-link"><i
 						class="fas fa-heart"></i>&nbsp;Wish List</a></li>
 				<li class="nav-item"><a href="/getCart" class="nav-link"><i
 						class="fas fa-cart-arrow-down"></i>&nbsp;Cart</a></li>
+				<li class="nav-item"><a href="/about" class="nav-link"> <i
+						class="fa-solid fa-circle-info"></i>&nbsp;About
+				</a></li>
+				<li class="nav-item"><a href="/contact" class="nav-link"> <i
+						class="fa-regular fa-envelope"></i>&nbsp;Contact Us
+				</a></li>
 				<li class="nav-item"><a href="/logout" class="nav-link"><i
 						class="fa fa-power-off"></i>&nbsp;Logout</a></li>
+
 			</ul>
 		</div>
 	</nav>

@@ -7,7 +7,9 @@
 <html>
     <head>
         <title>Retail Product Management</title>
-        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -15,7 +17,7 @@
         <style>
         @import url('https://fonts.googleapis.com/css?family=Numans');
         html,body {
-          background-image: url('https://images.pexels.com/photos/1363876/pexels-photo-1363876.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=2000');
+          background-image: url('https://thumbs.dreamstime.com/b/online-shopping-smartphone-e-commerce-shopping-tiny-people-character-concept-online-shopping-smartphone-e-commerce-167473457.jpg');
 		  background-size: cover;
           background-repeat: no-repeat;
           height: 100%;
@@ -62,7 +64,7 @@ border-radius: 5px;
         }
         .login_btn{
 			color: black;
-			background-color: #FF00FF;
+			background-color: #0dcaf0;
 			width: 100px;
 			
 		}
@@ -73,7 +75,7 @@ border-radius: 5px;
 		}
 		.input-group-prepend span{
 			width: 50px;
-			background-color: #FF00FF;
+			background-color: #0dcaf0;
 			color: black;
 			border:0 !important;
 		}
@@ -83,6 +85,9 @@ border-radius: 5px;
 			box-shadow: 0 0 0 0 !important;
 
 		}
+		.googlefont {
+		font-family: 'Lobster', cursive;
+		}
 
 		.err{
 			color: white;
@@ -90,11 +95,14 @@ border-radius: 5px;
         </style>
     </head>
     <body>
+    
+     <h1 class="googlefont">ShopperKing.com</h1>
+    
         <div class="container">
             <div class="d-flex justify-content-center h-100">
                 <div class="card" >
                 	<div class="card-header">
-                    <h1 class="login">Login UI</h1>
+                    <h1 class="login">Login</h1>
                     </div>
                     <div class="card-body">
                     <form:form method="post" action="/authenticate" modelAttribute="login">

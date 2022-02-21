@@ -165,4 +165,19 @@ public class ECommerceController {
 		return "login";
 	}
 
+	@GetMapping("/about")
+	public String about() {
+		return "about";
+	}
+
+	@GetMapping("/contact")
+	public String contactUs() {
+		return "contact";
+	}
+
+	@GetMapping("/address")
+	public String address() {
+		return "address";
+	}
+
 }

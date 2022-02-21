@@ -7,6 +7,10 @@
 <html lang="en">
 <head>
 <title>Retail Product Management</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <style>
     html,body
         {
@@ -17,7 +21,7 @@
 			background-repeat: no-repeat;
 			background-size: cover;   
 			background-color: #a4508b;
-			background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+	background-image: linear-gradient(326deg, #00ccff 0%, #3295a8 74%);
         }
         
 .bg-custom-1 {
@@ -27,7 +31,25 @@
 .bg-custom-2 {
 background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
 }
+.buy_btn{
+            color: black;
+            background-color: #FF00FF;
+            width: 100px;
+            
+        }
 
+ 
+
+.buy_btn:hover{
+            color: black;
+            background-color: white;
+        }
+.container {
+           
+            height: 100%;
+            align-content: center;
+          
+        }
 </style>
 </head>
 <link rel="stylesheet"
@@ -37,7 +59,7 @@ background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 <link rel="stylesheet" href="./style.css" />
-<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src="https://kit.fontawesome.com/667eb1d7cd.js" crossorigin="anonymous"></script>
 <body >
 	<!-- navbar for the pages -->
 	<nav class="navbar navbar-expand-md navbar-dark" style="background-color:rgba(53,57,66,255);">
@@ -49,10 +71,10 @@ background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
                 <ul class="navbar-nav ml-auto">
     				<li class="nav-item">
       					<a class="nav-link" href="/getWishlist"><i class="fas fa-heart"></i>&nbsp;Wish List</a>
-    				</li>
-    				<li class="nav-item">
-      					<a class="nav-link" href="/getCart"><i class="fas fa-cart-arrow-down"></i>&nbsp;Cart</a>
-    				</li>
+    				<li class="nav-item"><a href="/about" class="nav-link">
+						<i class="fa-solid fa-circle-info"></i>&nbsp;About</a></li>
+						<li class="nav-item"><a href="/contact" class="nav-link">
+						<i class="fa-regular fa-envelope"></i>&nbsp;Contact Us</a></li>
     				<li class="nav-item">
     	  				<a class="nav-link" href="/logout"><i class="fa fa-power-off"></i>&nbsp;Logout</a>
     				</li>
@@ -97,11 +119,21 @@ background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
 								<span id="zipCode">Delivering to ZipCode:${item.zipCode}
 								</span> <br> <span id="expectedDeliveryDate">Expected
 									Delivery Date:${item.deliveryDate} </span>
+								
+									
+ 
 							</div>
 						</div>
+<div class="d-grid gap-2 d-md-block">
+  <button class="btn btn-primary" type="button">Proceed to buy</button>
+</div>
 
 					</div>
+					
+
 				</div>
+
+            </form>
 			</c:forEach>
 		</div>
 	</div>
@@ -150,8 +182,17 @@ background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
 		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
 		crossorigin="anonymous"></script>
+		
+		<form action="/address" method="post">
+                <a href="localhost:8000/address">
+                    <button class="btn btn-primary" type="submit">
+                        <i style="font-size: 30px" class="fa">Proceed to buy</i>
+                    </button>
 
-	
+ 
+
+                </a>
+		
 </body>
 
 </html>
